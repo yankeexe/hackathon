@@ -4,4 +4,8 @@ root 'projects#index'
 resources :projects
 resources :categories
 resources :healthy
+resources :donates
+resources :teaches
+resources :foods
+resources :maps
 end

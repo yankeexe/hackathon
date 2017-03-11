@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311045716) do
+ActiveRecord::Schema.define(version: 20170311084846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,16 +22,43 @@ ActiveRecord::Schema.define(version: 20170311045716) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "donates", force: :cascade do |t|
+    t.string   "name"
+    t.string   "Country"
+    t.text     "email"
+    t.integer  "amount"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "creditcard"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "healths", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "required_amount"
+    t.integer  "donated_amount"
   end
 
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "teaches", force: :cascade do |t|
+    t.text     "title"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "required_amount"
+    t.integer  "donated_amount"
   end
 
 end

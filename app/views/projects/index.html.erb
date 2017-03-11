@@ -1,12 +1,12 @@
 	<div class="row">
 		<div class="col-md-4", align="center">
 		<%= image_tag("health.jpg", style: 'height:60%;width:60%;') %>
-		<p> <b> HEALTH </b></p>
+		<p> <b><%= link_to 'HEALTH', healthy_index_path %> </b></p>
 		</div>
 		
 		<div class="col-md-4", align="center">
 		<%= image_tag("edu.png", style: 'height:60%;width:60%;') %>
-		<p> <b> EDUCATION </b></p>
+		<p> <b> <%= link_to 'EDUCATION', teaches_path %> </b></p>
 		</div>
 		
 		<div class="col-md-4" align="center">

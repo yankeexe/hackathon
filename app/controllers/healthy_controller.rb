@@ -1,13 +1,12 @@
 class HealthyController < ApplicationController
 	def index
-		@health = Health.all 
+		@health = Health.all
 	end
-    def new
-    	@health = Health.new
-    end
+    
 
 	def create
-		@wealth = Health.create(health_params)
+		@health = Health.create(health_params)
+		redirect_to healthy_index_path
 		
 	end
 
@@ -30,7 +29,7 @@ class HealthyController < ApplicationController
 
 	private
 	def health_params
-		params.require(:health).permit(:title, :description)
+		params.require(:health).permit(:title, :description, :required_amount, :donated_amount)
 	end
 end
 

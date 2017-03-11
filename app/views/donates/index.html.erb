@@ -1,0 +1,11 @@
+<div class="donate-wrapper">
+<%= simple_form_for Donate.new do |f| %>
+<%= f.input :name %>
+<%= f.input :Country %>
+<%= f.input :email %>
+<%= f.input :creditcard %>
+<%= f.input :amount %>
+<%= f.input :comment %>
+<%= f.submit 'Donate', class: 'btn btn-primary' %>
+<% end %>
+</div>
